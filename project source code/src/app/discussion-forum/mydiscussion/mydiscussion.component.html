@@ -1,0 +1,55 @@
+
+<!-- <div id = "button1"><button  mat-raised-button color="primary" [routerLink]="['/createDiscussion']">Create a New Discussion</button></div>
+<div id = "button2"><button  mat-raised-button color="primary" [routerLink]="['/myDiscussions']">My Discussions</button></div> -->
+
+<!-- <ul class="main-nav">
+    <li class=""><button  mat-raised-button color="primary" [routerLink]="['/createDiscussion']">Create a New Discussion</button>
+    </li>
+  
+    <div class="">
+        <li><button  mat-raised-button color="primary" [routerLink]="['/viewDiscussions']">Discussions</button>
+        </li>
+  
+    </div>
+  </ul> -->
+  <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center; color:indianred;">My Discussions</h1>
+      <br>
+      <br>
+      <br>
+       
+      <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+      <h3 *ngIf = "discussions.length == 0"> No discussions posted yet!!</h3>
+      <mat-accordion multi="true" *ngIf="discussions.length > 0">
+        <mat-expansion-panel  *ngFor="let discussion of discussions">
+          <mat-expansion-panel-header>
+            <div>
+            <h4 id="title" id="title">{{ discussion.title }}</h4>
+            <h5 id="number">{{discussion.answers.length}} answers received.</h5>
+          </div>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+           {{discussion.content}}
+           </mat-panel-description>
+          <h4 *ngIf="discussion.answers.length!=0">Answers:</h4>
+          <div *ngFor="let answer of discussion.answers">
+            <p>{{answer.answer}}</p>
+            <h5>by {{answer.answeredby}}</h5>
+            <button mat-button color="primary" (click)="onVote(answer.answer, discussion._id, 'upvotes')">UpVote</button>
+            <button mat-button color="warn" (click)="onVote(answer.answer, discussion._id, 'downvotes')">DownVote</button>
+            <h5>Score {{answer.upVotes - answer.downVotes}}</h5>
+            <hr>
+          </div>
+          <!-- <h4 id="content">{{ post.content }}</h4> -->
+          <!-- <mat-action-row > -->
+              <!-- <mat-form-field id="ans">
+              <p><textarea matInput id="answer" placeholder = "Answer Here" name="answer" [(ngModel)]="answer"></textarea></p>
+              </mat-form-field>
+              <button mat-button color="warn" (click)="updateAnswer(discussion._id)">Submit</button> -->
+          <!-- </mat-action-row> -->
+
+          <mat-action-row>
+            <button mat-button color="warn" (click)="deleteDiscussion(discussion._id)">Delete</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      

@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-title">
+        <h2>Signup</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="complete_div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <form
+          (submit)="onSignup(signupForm)"
+          #signupForm="ngForm"
+          *ngIf="!isLoading"
+        >
+          <input
+            type="email"
+            ngModel
+            id="name"
+            name = "email"
+            class="name"
+            placeholder=" Email"
+            autocomplete="off"
+          />
+          <br />
+          <br />
+          <input
+            type="text"
+            id="name"
+            ngModel
+            name = "username"
+            class="name"
+            placeholder=" UserName"
+            autocomplete="off"
+          />
+          <br />
+          <br />
+          <div class="form-group">
+            <input
+              type="password"
+              id="pass"
+              ngModel
+              name = "password"
+              class="pass"
+              placeholder=" Password"
+              autocomplete="off"
+              minlength="8"
+            />
+          </div>
+
+          <select ngModel class="form-select" id="interest1" name="interest1">
+            <option selected hidden value="">Select Your Interests</option>
+            <option value="cricket">Cricket</option>
+            <option value="football">Football</option>
+            <option value="hockey">Hockey</option>
+            <option value="food">Food</option>
+            <option value="human science">Human Science</option>
+            <option value="computer science">Computer Science</option>
+          </select>
+          <br />
+
+          <select ngModel class="form-select" id="interest2" name="interest2">
+            <option selected hidden value="">Select Your Interests</option>
+            <option value="cricket">Cricket</option>
+            <option value="football">Football</option>
+            <option value="hockey">Hockey</option>
+            <option value="food">Food</option>
+            <option value="human science">Human Science</option>
+            <option value="computer science">Computer Science</option>
+          </select>
+          <br />
+
+          <button id="signin_button" class="signin_button">Submit</button>
+          <br /><br />
+        </form> -->
+        <mat-card  >
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+      <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="username" ngModel type="text" placeholder="Username  (This name will will be visible to everyone)" #usernameInput="ngModel" required>
+      <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+      <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select your first interest</mat-label>
+      <mat-select name="interest1" ngModel matInput #interest1Input="ngModel" required>
+        <mat-option *ngFor="let interest of interests" [value]="interest.value">
+          {{interest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select your second interest</mat-label>
+      <mat-select name="interest2" ngModel matInput #interest2Input="ngModel" required>
+        <mat-option *ngFor="let interest of interests" [value]="interest.value">
+          {{interest.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Signup</button>
+  </form>
+  
+</mat-card>
+        <p id="user_signup">
+          Already have an account?
+          <a color="primary" [routerLink]="['/login']">Login</a>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="assets/signup.png" alt="signin_image" id="sign_image" />
+      </div>
+    </div>
+  </div>
+</div>

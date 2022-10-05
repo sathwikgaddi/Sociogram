@@ -1,0 +1,29 @@
+textarea {
+    width: 100%;
+}
+
+mat-action-row {
+
+    width: 100%;
+}
+/* #button1 {
+    float: left;
+}
+
+#button2 {
+    float: end;
+} */
+
+.main-nav {
+    list-style-type: none;
+    display: flex;
+    }
+    
+    .main-nav li:first-child {
+    margin-right: auto;
+    z-index: 3;
+    }    
+
+/* .mat-expansion-panel {
+    backg;
+} */

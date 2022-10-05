@@ -1,0 +1,50 @@
+
+<div id="image">
+<img id = "hp" *ngIf="!userIsAuthenticated" src="/assets/lp.gif">
+</div>
+<div id="name">
+  <p  id="main" *ngIf="!userIsAuthenticated">Sociogram</p>
+  <p  id="caption" *ngIf="!userIsAuthenticated">"Connections made easy."</p>
+  </div>
+
+<!-- <div class="float-container">
+
+  <div class="float-child">
+    <div class="green">Float Column 1</div>
+  </div>
+  
+  <div class="float-child">
+    <div class="blue">Float Column 2</div>
+  </div>
+  
+</div> -->
+
+<!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0"></mat-paginator>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading && userIsAuthenticated">
+  <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      <h2 id="title">{{ post.title }}</h2>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+     by  {{post.username}}
+     </mat-panel-description>
+    <div class="post-image">
+      <!-- <p>{{post.imagePath}}</p> -->
+      <br>
+    <br>
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    
+    <h4 id="content">{{ post.content }}</h4>
+    <mat-action-row >
+      <button mat-button color="warn" (click)="onLike(post.id)"><img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-like-touch-gestures-those-icons-lineal-those-icons.png"/></button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
+
+
+<button mat-button id="top"  *ngIf="userIsAuthenticated" (click)="onclicktop()"><img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/30/000000/external-up-arrow-alignment-and-tools-kiranshastry-solid-kiranshastry.png"/></button>

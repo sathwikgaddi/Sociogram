@@ -1,0 +1,32 @@
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+    <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
+      <mat-expansion-panel-header>
+        <h2 id="title">{{ post.title }}</h2>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+       by  {{post.username}}
+       </mat-panel-description>
+      <div class="post-image">
+        <!-- <p>{{post.imagePath}}</p> -->
+        <br>
+      <br>
+        <img [src]="post.imagePath" [alt]="post.title">
+      </div>
+      
+      <h4 id="content">{{ post.content }}</h4>
+      <mat-action-row >
+        <a mat-button color="primary" [routerLink]="['/edit', post.id]"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="30" height="30"
+          viewBox="0 0 171 171"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99562v-171.99562h171.99562v171.99562z" fill="none"></path><g fill="#333333"><path d="M128.25,14.25l-17.20019,17.2002l28.5,28.5l17.20019,-17.2002zM100.29273,42.20728l-78.91773,78.91772v28.5h28.5l78.91773,-78.91772z"></path></g></g></svg></a>
+        <button mat-button color="warn" (click)="onDelete(post.id)"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="30" height="30"
+          viewBox="0 0 171 171"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99562v-171.99562h171.99562v171.99562z" fill="none"></path><g fill="#e74c3c"><path d="M74.50578,24.42857c-2.68331,-0.04929 -5.26878,1.00723 -7.14966,2.92162c-1.88088,1.91439 -2.89157,4.51812 -2.79489,7.20015v5.58231h-32.45442c-1.92736,0 -3.4898,1.56243 -3.4898,3.4898c0,1.92736 1.56243,3.4898 3.4898,3.4898h106.78639c1.92736,0 3.4898,-1.56243 3.4898,-3.4898c0,-1.92736 -1.56243,-3.4898 -3.4898,-3.4898h-32.45442v-5.58231c0.09668,-2.68202 -0.91402,-5.28575 -2.79489,-7.20015c-1.88088,-1.91439 -4.46635,-2.97092 -7.14966,-2.92162zM74.31493,31.40135c0.06368,0.00009 0.12733,0.00237 0.19085,0.00682h21.98844c0.83494,-0.05878 1.6522,0.26014 2.22663,0.86891c0.57443,0.60877 0.84543,1.44315 0.73833,2.27327v5.58231h-27.91837v-5.58231c-0.10281,-0.797 0.14281,-1.59966 0.67402,-2.20265c0.53121,-0.60299 1.29649,-0.94784 2.1001,-0.94634zM45.19354,62.81633l8.72449,74.8568c0.54822,5.21708 5.05411,9.11144 10.29558,8.8983h43.97007c5.33701,0.21247 9.92035,-3.75917 10.46939,-9.07211l7.1534,-74.683z"></path></g></g></svg></button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+    *ngIf="posts.length > 0"></mat-paginator>
+  <p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
+  

@@ -1,0 +1,22 @@
+.info-text {
+    text-align: center;
+  }
+
+  
+  #username, #interests {
+    font-size: larger;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color:blue;
+  }
+
+  #i {
+    font-size: larger;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color:firebrick;
+  }
+
+  mat-action-row {
+    background-color:lightgray;
+  }

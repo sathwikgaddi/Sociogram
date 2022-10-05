@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.content {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-accordion {
+  background-image: url("/assets/insideform.jpg");
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
+
+mat-expansion-panel {
+  margin-left: 15%;
+  width: 70%;
+}
+
+mat-action-row {
+  background-color:lightgray;
+  /* display: none; */
+}
+
+.mat-action-row {
+  place-content: space-between;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.post-image {
+  width: 50%;
+}
+
+.post-image img {
+  width: 50%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#title {
+  font-style: italic;
+}
+
+#content {
+  font-style: italic;
+}
+
+#name {
+  float: right;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 300%;
+  width: 30%;
+}
+
+#main {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 150%;
+  color:#00539cff;
+  
+}
+
+#caption {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 100%;
+  color: #EEA47fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#hp {
+  border-radius: 100px;
+  width: 300%;
+
+}
+
+#image {
+  width: 20%;
+  float: left;
+}
+
+/* .float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid red;
+}   */
+
+#top {
+  float: right;
+}

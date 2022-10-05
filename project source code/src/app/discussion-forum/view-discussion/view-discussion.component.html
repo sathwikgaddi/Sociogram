@@ -1,0 +1,53 @@
+
+<!-- <div id = "button1"><button  mat-raised-button color="primary" [routerLink]="['/createDiscussion']">Create a New Discussion</button></div>
+<div id = "button2"><button  mat-raised-button color="primary" [routerLink]="['/myDiscussions']">My Discussions</button></div> -->
+
+<!-- <ul class="main-nav">
+  <li class=""><button  mat-raised-button color="primary" [routerLink]="['/createDiscussion']">Create a New Discussion</button>
+  </li>
+
+  <div class="">
+      <li><button  mat-raised-button color="primary" [routerLink]="['/myDiscussions']">My Discussions</button>
+      </li>
+
+  </div>
+</ul>
+    <br>
+    <br>
+    <br>
+     -->
+     <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center; color:indianred;">Discussions</h1>
+      <br>
+      <br>
+      <br>
+    <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+    <h3 *ngIf="discussions.length == 0">No discussions posted Yet!!</h3>
+    <mat-accordion multi="true" *ngIf="discussions.length > 0">
+      <mat-expansion-panel  [expanded]="true" *ngFor="let discussion of discussions">
+        <mat-expansion-panel-header>
+          <h5 id="title">{{ discussion.title }}</h5>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+         {{discussion.content}}
+         </mat-panel-description>
+
+         <mat-form-field id="ans">
+          <p><input type="text" matInput id="answer" placeholder = "Answer Here" name="answer" [(ngModel)]="answer"></p>
+          </mat-form-field>
+          <button mat-button color="warn" (click)="updateAnswer(discussion._id)">Submit</button>
+        <h4 *ngIf="discussion.answers.length!=0">Other Answers:</h4>
+        <div *ngFor="let answer of discussion.answers" style="color:maroon;">
+          <p>{{answer.answer}}</p>
+          <h5>by {{answer.answeredby}}</h5>
+          <button mat-button color="primary" (click)="onVote(answer.answer, discussion._id, 'upvotes')">UpVote</button>
+          <button mat-button color="warn" (click)="onVote(answer.answer, discussion._id, 'downvotes')">DownVote</button>
+          <h5>Score {{answer.upVotes - answer.downVotes}}</h5>
+          <hr>
+        </div>
+        <!-- <h4 id="content">{{ post.content }}</h4> -->
+        <!-- <mat-action-row > -->
+            
+        <!-- </mat-action-row> -->
+      </mat-expansion-panel>
+    </mat-accordion>
+    

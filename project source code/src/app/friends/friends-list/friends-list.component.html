@@ -1,0 +1,21 @@
+<!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+<mat-accordion multi="true" *ngIf="friends.length > 0">
+    <mat-expansion-panel *ngFor="let f of friends">
+      <mat-expansion-panel-header>
+        {{ f }}
+      </mat-expansion-panel-header>
+      <!-- <div class="post-image">
+        <img [src]="post.imagePath" [alt]="post.title">
+      </div> -->
+      <!-- <p>{{ f.interests }}</p> -->
+      <mat-action-row>
+        <!-- <a mat-button color="primary" [routerLink]="['/addfriend', f.id]">Add</a> -->
+        <!-- <button mat-button color="warn" (click)="onAddFriend(f.id)">Add Friend</button> -->
+        <button mat-button color="warn" (click)="onRemoveFriend(f)">Unfriend</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!-- <mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+    *ngIf="posts.length > 0"></mat-paginator>-->
+  <p class="info-text mat-body-1" *ngIf="friends.length <= 0">You made 0 friends</p> 
+  

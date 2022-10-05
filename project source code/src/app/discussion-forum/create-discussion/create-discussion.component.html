@@ -1,0 +1,22 @@
+<mat-card>
+    <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+    <form [formGroup]="form" (submit)="onSaveDiscussion()">
+      <mat-form-field>
+        <input matInput type="text" formControlName="title" placeholder="Question Title">
+        <mat-error *ngIf="form.get('title').invalid">Invalid Question title! Max length should not exceed 60 characters!!</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput rows="4" formControlName="content" placeholder="Question Description"></textarea>
+        <mat-error *ngIf="form.get('content').invalid">Please enter a Question Description.</mat-error>
+      </mat-form-field>
+  
+    <br>
+    <br>
+    <br>
+      
+  
+      
+      <button mat-raised-button color="accent" type="submit">Create Discussion</button>
+    </form>
+  </mat-card>
+  

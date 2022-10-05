@@ -1,0 +1,221 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+#name {
+  float: left;
+  font-size: 50%;
+}
+
+#hp {
+  float: right;
+  width: 30rem;
+  height: 30rem;
+}
+#h1_tag {
+  font-size: 50px;
+  margin-top: 60px;
+  color: indianred;
+}
+p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.fa-check {
+  margin-right: 10px;
+  color: indianred;
+}
+.buttons {
+  margin-top: 20px;
+}
+#sign_up {
+  width: 150px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid indianred;
+  background-color: indianred;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+}
+#sign_up:hover {
+  border-color: 4px solid indianred;
+  background-color: white;
+  color: indianred;
+}
+#log_in {
+  width: 150px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid indianred;
+  background-color: indianred;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  margin-left: 10px;
+}
+#log_in:hover {
+  border-color: 4px solid indianred;
+  background-color: white;
+  color: indianred;
+}
+#dev_image {
+  height: 100%;
+  width: 100%;
+}
+#contact {
+  text-align: center;
+  margin-top: 55px;
+  font-size: 30px;
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+#contact::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #cd5c5c;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+.bla_bla {
+  background: #fff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 30px;
+  margin-top: 45px;
+}
+.image_container {
+  text-align: center;
+}
+.fa-map-marker-alt {
+  color: indianred;
+  font-size: 35px;
+}
+.image_container2 {
+  text-align: center;
+}
+.fa-envelope {
+  color: indianred;
+  font-size: 35px;
+}
+.info {
+  font-size: 17px;
+}
+.fa-phone-volume {
+  color: indianred;
+  font-size: 35px;
+}
+input {
+  width: 300px;
+  height: 40px;
+  outline: none;
+  border: 1px solid indianred;
+  font-size: 13px;
+  padding-left: 5px;
+}
+textarea {
+  width: 300px;
+  outline: none;
+  border: 1px solid indianred;
+  font-size: 13px;
+  padding-left: 5px;
+}
+.button {
+  width: 150px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid indianred;
+  background-color: indianred;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+}
+.button:hover {
+  border-color: 4px solid indianred;
+  background-color: white;
+  color: indianred;
+}
+#socio_gram {
+  margin-top: 80px;
+  font-size: 30px;
+  color: indianred;
+}
+
+#join_team {
+  margin-top: 80px;
+  font-size: 25px;
+}
+.quote {
+  margin-top: 15px;
+  font-size: 20px;
+}
+.fa-quote-left {
+  color: indianred;
+}
+.fa-quote-right {
+  color: indianred;
+}
+.subscribe {
+  width: 300px;
+  height: 40px;
+  outline: none;
+  border: 1px solid indianred;
+  font-size: 13px;
+  padding-left: 5px;
+}
+.sub:hover {
+  border-color: 10px solid indianred;
+  background-color: white;
+  color: indianred;
+}
+.sub {
+  width: 150px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid indianred;
+  background-color: indianred;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.copy_right {
+  margin-top: 50px;
+}
+.icons {
+  margin-top: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.fa-twitter {
+  color: indianred;
+}
+.fa-facebook {
+  margin-left: 10px;
+  color: indianred;
+}
+.fa-instagram-square {
+  margin-left: 10px;
+  color: indianred;
+}
+.fa-linkedin {
+  margin-left: 10px;
+  color: indianred;
+}
+.fa-skype {
+  margin-left: 10px;
+  color: indianred;
+}

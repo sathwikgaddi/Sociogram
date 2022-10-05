@@ -1,0 +1,93 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  margin-top: 15px;
+  font-size: 25px;
+
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  position: relative;
+  color: #45505b;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #cd5c5c;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+#complete_div {
+  margin-top: 3%;
+}
+#heading {
+  margin-left: 25%;
+  font-style: italic;
+  padding-left: 20%;
+}
+
+#user_signup {
+  margin-top: 15px;
+  font-size: 15px;
+}
+#user_fpass {
+  font-size: 15px;
+}
+
+.name {
+  outline: none;
+  width: 50%;
+  padding: 6px;
+  font-size: 15px;
+}
+.name:focus {
+  border-color: indianred;
+  border: 1px solid indianred;
+}
+.pass {
+  outline: none;
+  width: 50%;
+  padding: 6px;
+}
+.pass:focus {
+  border-color: indianred;
+  border: 1px solid indianred;
+}
+.login_button {
+  width: 30%;
+  padding: 7px;
+  cursor: pointer;
+  color: white;
+  background-color: indianred;
+  border: 1px solid indianred;
+  border-radius: 50px;
+  font-size: 15px;
+}
+#fpass_image {
+  width: 70%;
+}

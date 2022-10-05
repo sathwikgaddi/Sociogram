@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-title">
+        <h2>Login</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="complete_div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form
+          (submit)="onLogin(loginForm)"
+          #loginForm="ngForm"
+          *ngIf="!isLoading"
+        >
+          <input
+            type="text"
+            ngModel
+            name = "email"
+            id="name"
+            class="name"
+            placeholder=" Email"
+            autocomplete="off"
+          />
+          <br />
+          <br />
+          <input
+            type="password"
+            ngModel
+            name = "password"
+            id="pass"
+            class="pass"
+            placeholder=" Password"
+          />
+          <br />
+          <br />
+          <button id="login_button" class="login_button">Login</button>
+        </form>
+
+        <p id="user_signup">
+          Create an account
+          <a color="primary" [routerLink]="['/signup']">SignUp</a>
+        </p>
+        <!-- <p id="user_fpass">
+          Forgot Password..?
+          <a color="primary" [routerLink]="['/fpass']">ClickHere</a>
+        </p> -->
+      </div>
+
+      <div class="col-md-6">
+        <img src="assets/signin.png" alt="signin_image" id="sign_image" />
+      </div>
+    </div>
+  </div>
+</div>
